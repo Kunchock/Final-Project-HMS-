@@ -1,0 +1,369 @@
+/* Theme: Warm Rustic Palette for HMS
+   Palette variables and common components used across templates
+*/
+:root{
+  /* Primary palette (exact as requested) */
+  --primary-orange: #D47E30; /* Primary Orange: Buttons, Links, Icons */
+  --dark-brown: #8D5A2B;     /* Dark Brown: Headings, Hover States */
+  --warm-brown: #825E34;     /* Warm Brown: Navbar, Table Headers */
+  --cream-bg: #FDFBD4;       /* Cream Background: Page & Section Backgrounds */
+  --soft-dark-brown: #3B2F2F;/* Soft Dark Brown: Body Text */
+  --soft-gold: #E7C186;      /* Soft Gold: accents */
+  --gold-border: #E0C99B;    /* Gold Border: inputs/tables */
+
+  /* Map existing variable names to the new palette variables so existing rules continue to work */
+  --bg-very-light: var(--cream-bg);
+  --cta: var(--primary-orange);
+  --cta-hover: var(--dark-brown);
+  --nav-bg: var(--warm-brown);
+  --text-dark: var(--soft-dark-brown);
+  --cta-visited: var(--nav-bg);
+  --card-title: var(--cta-hover);
+  --muted-dark: #5B3C21;
+  --accent-similar: var(--soft-gold);
+  --border: var(--gold-border);
+  --row-hover: #F9F4CC;
+  /* Earthy professional panel color (a bit darker than bg-very-light) */
+  --panel-earthy: #F3E6CB;
+  /* Service heading color (earthy, professional) */
+  --service-heading: var(--dark-brown);
+}
+
+/* Page background and base typography */
+body{
+  background-color: var(--bg-very-light);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header / Navbar */
+.hms-navbar{
+  background-color: var(--nav-bg);
+  color: #fff;
+}
+.hms-navbar a, .hms-navbar .nav-link{ color: #fff; }
+.hms-navbar a:hover{ color: var(--cta); }
+
+/* Buttons */
+.btn-cta{
+  background-color: var(--cta);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: .6rem 1rem;
+}
+.btn-cta:hover{ background-color: var(--cta-hover); }
+
+/* Links states */
+a, a:link{ color: var(--cta); }
+a:hover{ color: var(--cta-hover); }
+a:visited{ color: var(--cta-visited); }
+
+/* Sidebar */
+.hms-sidebar{
+  background: var(--nav-bg);
+  color: #fff;
+}
+.hms-sidebar .active{ background: var(--cta); color: #fff; }
+.hms-sidebar a:hover{ background: var(--cta-hover); color: #fff; }
+
+/* Cards */
+.card-title, .hms-card-title{ color: var(--card-title); }
+.hms-card-subtext{ color: var(--text-dark); }
+
+/* Login card specific */
+.login-card{
+  background: rgba(255,255,255,0.98);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+}
+.login-center{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 2rem;
+}
+.login-header{ text-align:center; margin-bottom:18px; }
+.btn-login{ background-color: var(--cta); color:#fff; border:none; width:100%; padding:12px; font-weight:600; border-radius:10px; }
+
+/* Password toggle button */
+.password-toggle{ position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:#666; }
+
+/* Tables */
+.hms-table thead{ background: var(--nav-bg); color:#fff; }
+.hms-table tbody tr:hover{ background: var(--row-hover); }
+.hms-table, .hms-table th, .hms-table td{ border-color: var(--border); }
+
+/* Utility */
+.text-muted-dark{ color: var(--muted-dark); }
+.accent-gold{ color: var(--soft-gold); }
+
+/* Form tweaks */
+.form-label{ font-weight:600; color:var(--text-dark); }
+.invalid-feedback{ color: #b00020; }
+
+/* Responsive small tweaks */
+@media (max-width: 576px){
+  .login-card{ padding:18px; }
+}
+
+/* Additional base styles lifted from user's preferred base design */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f9fa" width="1200" height="800"/></svg>');
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* Features / Cards */
+.feature-card {
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease, color .25s ease;
+  height: 100%;
+  background-color: #fff; /* keep content contrast */
+  border: 2px solid transparent;
+  color: var(--text-dark);
+}
+/* On hover we *invert* the card colors: dark background and light text/icons */
+.feature-card:hover {
+  transform: translateY(-6px);
+  /* slightly lighter inset and softer overall tone */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12), 0 0 0 4px rgba(181,128,90,0.03) inset;
+  /* Use #B5805A at 30% opacity for a warm, lighter hover */
+  background-color: rgba(181,128,90,0.30); /* #B5805A @ 30% */
+  border-color: rgba(181,128,90,0.18);
+  color: var(--bg-very-light); /* light text on warm bg */
+}
+.feature-card h5 { color: var(--dark-brown); }
+.feature-card p { color: var(--text-dark); }
+.feature-icon { font-size: 3rem; color: var(--primary-orange) !important; margin-bottom: 1rem; }
+/* Inverted text/icon colors when hovered */
+.feature-card:hover h5,
+.feature-card:hover .card-title {
+  color: #ffffff !important; /* pure white for max contrast */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  font-weight: 700;
+}
+.feature-card:hover p {
+  color: rgba(255,255,255,0.95) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+  font-weight: 500;
+}
+.feature-card:hover .feature-icon,
+.feature-card:hover .feature-icon i {
+  color: #ffffff !important; /* icons become white on hover */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+
+/* Service hero tweaks */
+.service-hero h1, .service-hero .display-5 { color: var(--service-heading) !important; }
+
+/* Service hero background — earthy, professional, subtly textured */
+.service-hero {
+  /* layered gradients: subtle warm overlay + soft earthy base */
+  background: linear-gradient(180deg, rgba(212,126,48,0.06), rgba(141,90,43,0.04)),
+              linear-gradient(135deg, var(--panel-earthy) 0%, var(--bg-very-light) 100%) !important;
+  background-size: cover !important;
+  color: var(--text-dark) !important;
+}
+.service-hero p, .service-hero .lead { color: rgba(59,47,47,0.9) !important; }
+.service-hero .btn-primary { background-color: var(--cta) !important; border-color: var(--cta) !important; }
+
+/* Utility overrides for bootstrap text/background colors to use the site palette */
+.text-primary { color: var(--primary-orange) !important; }
+.bg-primary { background-color: var(--primary-orange) !important; }
+.btn-primary { background-color: var(--primary-orange) !important; border-color: var(--primary-orange) !important; }
+
+.text-info, .text-warning { color: var(--soft-gold) !important; }
+.bg-warning { background-color: var(--soft-gold) !important; color: var(--text-dark) !important; }
+
+.text-success { color: var(--dark-brown) !important; }
+.bg-success { background-color: var(--dark-brown) !important; color: #fff !important; }
+
+/* Service / feature icon defaults tuned to palette */
+.feature-icon i, .service-icon i { color: var(--primary-orange); }
+.feature-card h5, .service-card h5 { color: var(--dark-brown); }
+.service-card:hover .service-icon { color: var(--dark-brown); }
+
+/* Small card / panel whites mapped to cream for consistency */
+.card.panel-bg, .card.panel-earthy-bg { background-color: inherit; }
+
+/* Comfort & Facilities: service-card hover effect
+   - subtle upward lift
+   - background shifts to a slightly deeper earthy tone
+   - icon and heading gain stronger contrast from the palette
+*/
+.service-card {
+  background-color: #fff; /* keep cards white by default for contrast */
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, color 0.28s ease;
+  border: none; /* remove border lines from each service card */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  color: var(--text-dark);
+}
+/* On hover invert to dark background with light text/icons for clear reversed contrast */
+.service-card:hover {
+  transform: translateY(-6px);
+  /* soften the inset tint and use the requested warm color at 30% opacity */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10), 0 0 0 2px rgba(181,128,90,0.03) inset;
+  background-color: rgba(181,128,90,0.30); /* #B5805A @ 30% */
+  border-color: rgba(181,128,90,0.12);
+  color: var(--bg-very-light); /* light text */
+}
+.service-card .service-icon { font-size: 2.25rem; }
+.service-card .service-icon i { color: var(--primary-orange); transition: color 0.28s ease; }
+/* Icon and heading switch to light color on hover for contrast */
+.service-card:hover .service-icon i,
+.service-card:hover .service-icon {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+.service-card:hover h5 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  font-weight: 700;
+}
+.service-card:hover p { color: rgba(255,255,255,0.95) !important; font-weight:500; }
+
+/* Slightly darken badges on hover so they remain legible against the warm hover background */
+.feature-card:hover .badge, .service-card:hover .badge {
+  filter: brightness(0.95);
+}
+
+/* Ensure feature icons and headings get a stronger accent on hover for clarity */
+.feature-card:hover .feature-icon, .feature-card:hover .feature-icon i {
+  color: var(--primary-orange) !important;
+}
+.feature-card:hover h5 {
+  color: var(--dark-brown);
+}
+
+/* Transparent Navbar and scroll effect */
+.transparent-navbar {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.transparent-navbar.scrolled {
+  background-color: rgba(130, 94, 52, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.transparent-navbar .nav-link,
+.transparent-navbar .navbar-brand { color: white; font-weight: 500; }
+.transparent-navbar .nav-link:hover { color: var(--cta); }
+.navbar-brand { font-weight: bold; font-size: 1.5rem; color: white; }
+
+/* Buttons */
+.btn-primary { background-color: var(--cta); border-color: var(--cta); color: white; }
+.btn-primary:hover { background-color: var(--cta-hover); border-color: var(--cta-hover); }
+.btn-secondary { background-color: var(--nav-bg); border-color: var(--nav-bg); color: white; }
+.btn-secondary:hover { background-color: var(--cta-hover); border-color: var(--cta-hover); }
+
+/* Contact & Footer */
+.contact-section { background-color: #f8f9fa; border-top: 3px solid var(--cta); }
+footer { background-color: var(--cta-hover); color: white; }
+footer a { color: var(--cta); }
+footer a:hover { color: white; }
+.social-icons a { color: white; font-size: 1.5rem; margin: 0 10px; transition: color .3s ease; }
+.social-icons a:hover { color: var(--cta); }
+
+/* Forms */
+.form-control, .form-select { background-color: white; color: var(--text-dark); border-color: var(--cta); }
+.form-control:focus, .form-select:focus { background-color: white; color: var(--text-dark); border-color: var(--cta-hover); box-shadow: 0 0 0 0.2rem rgba(212, 126, 48, 0.25); }
+
+/* Cards & Sections */
+.card { border-color: var(--cta); }
+.card-header { background-color: var(--nav-bg); color: white; }
+
+/* Alerts */
+.alert-info { background-color: rgba(212, 126, 48, 0.1); border-color: var(--cta); color: var(--muted-dark); }
+.alert-success { background-color: rgba(141, 90, 43, 0.1); border-color: var(--cta-hover); color: var(--cta-hover); }
+.alert-warning { background-color: rgba(230, 201, 155, 0.2); border-color: var(--soft-gold); color: var(--muted-dark); }
+.alert-danger { background-color: rgba(91, 60, 33, 0.1); border-color: var(--muted-dark); color: var(--muted-dark); }
+
+/* Pagination */
+.pagination .page-link { color: var(--cta); border-color: var(--border); }
+.pagination .page-link:hover { background-color: var(--row-hover); color: var(--cta-hover); }
+.pagination .page-item.active .page-link { background-color: var(--cta); border-color: var(--cta); }
+
+/* Sidebar */
+.sidebar { background-color: var(--nav-bg); }
+.sidebar-item { color: white; transition: all 0.3s ease; padding: 10px 15px; display: block; }
+.sidebar-item:hover { background-color: var(--cta-hover); color: white; }
+.sidebar-item.active { background-color: var(--cta); color: white; }
+
+/* Reusable panel background matching profile/home background */
+.panel-bg { background-color: var(--bg-very-light) !important; }
+.panel-earthy-bg { background-color: var(--panel-earthy) !important; border: 1px solid rgba(0,0,0,0.04); }
+
+/* Semi-opaque panel overlay utility (for notices, overlays) */
+.panel-overlay { background-color: rgba(255,255,255,0.85) !important; }
+
+/* About hero: use the site's earthy/cream panel and dark text for readability */
+.about-hero {
+  background-color: var(--panel-earthy) !important;
+  color: var(--text-dark) !important;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+.about-hero .container { position: relative; z-index: 2; }
+.about-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  /* slightly opaque to let the image texture show through while matching the palette */
+  background: linear-gradient(rgba(243,230,203,0.95), rgba(243,230,203,0.95)); /* var(--panel-earthy) @ 95% */
+}
+
+/* About content panel: slightly different cream, still in palette but stands out from page */
+.about-content {
+  background-color: rgba(253,251,212,0.92); /* var(--cream-bg) at ~92% */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 2;
+}
+
+/* Feature highlight cards inside About: subtle border to separate each section */
+.about-feature-card {
+  background-color: rgba(255,255,255,0.06); /* keep translucent look */
+  border: 1px solid rgba(181,128,90,0.12); /* warm border matching palette */
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.about-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: rgba(181,128,90,0.22);
+}
+
+
+
+
+/* Accessibility: respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .service-card,
+  .feature-icon,
+  .service-icon,
+  .btn,
+  .accordion-button {
+    transition: none !important;
+  }
+
+  .feature-card:hover,
+  .service-card:hover {
+    transform: none !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06) !important;
+    /* keep hover color changes for visual cue but avoid motion */
+  }
+}
+

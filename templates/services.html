@@ -3,9 +3,7 @@
 {% block content %}
 
 <!-- Hero / Intro Section -->
-<section class="service-hero py-5 text-center text-light" 
-         style="background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-         url('/static/images/hostel1.jpg') center/cover no-repeat;">
+<section class="service-hero py-5 text-center">
   <div class="container">
     <h1 class="display-5 fw-bold mb-3">Simplifying Hostel Life for Every Student</h1>
     <p class="lead">We built HostelConnect to make living, learning, and managing your hostel stay stress-free and connected.</p>
@@ -27,7 +25,7 @@
           <div class="card feature-card border-0 shadow-sm h-100">
             <div class="card-body text-center p-4">
               <div class="feature-icon mb-3">
-                <i class="fas fa-bed fa-2x text-primary"></i>
+                <i class="fas fa-bed fa-2x"></i>
               </div>
               <h5 class="card-title fw-bold">Room Booking <span class="badge bg-success ms-2">Most Used</span></h5>
               <p class="card-text text-muted">Find and reserve your ideal room in seconds — with live availability and instant confirmation.</p>
@@ -40,7 +38,7 @@
           <div class="card feature-card border-0 shadow-sm h-100">
             <div class="card-body text-center p-4">
               <div class="feature-icon mb-3">
-                <i class="fas fa-exclamation-triangle fa-2x text-warning"></i>
+                <i class="fas fa-exclamation-triangle fa-2x"></i>
               </div>
               <h5 class="card-title fw-bold">Complaints</h5>
               <p class="card-text text-muted">Submit and track issues effortlessly — we ensure faster resolutions and better accountability.</p>
@@ -53,7 +51,7 @@
           <div class="card feature-card border-0 shadow-sm h-100">
             <div class="card-body text-center p-4">
               <div class="feature-icon mb-3">
-                <i class="fas fa-credit-card fa-2x text-info"></i>
+                <i class="fas fa-credit-card fa-2x"></i>
               </div>
               <h5 class="card-title fw-bold">Payment Management</h5>
               <p class="card-text text-muted">Secure online payments with instant receipts — making transactions safe, quick, and transparent.</p>
@@ -66,7 +64,7 @@
 </section>
 
 <!-- Hostel Facilities Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light panel-earthy-bg">
   <div class="container services-section">
     <div class="text-center mb-5">
       <h2 class="fw-bold mb-3">Comfort & Facilities</h2>
@@ -127,50 +125,6 @@
   </div>
 </section>
 
-<!-- Custom Styles -->
-<style>
-body {
-  background-color: #f9f5f0;
-}
-
-.feature-card {
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-card {
-  border: none;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  color: #0d6efd;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  color: #198754;
-}
-
-.service-hero {
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}
-</style>
+<!-- Page-specific styles moved to Home/static/css/theme.css to keep site-wide styling consistent -->
 
 {% endblock content %}

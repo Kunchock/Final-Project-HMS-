@@ -6,12 +6,13 @@
 {% block content %}
 
 <!-- ABOUT HMS SECTION (full hero layout with overlay + more content, no 'Our Goal') -->
-<section id="about" class="position-relative d-flex align-items-center text-white" 
-         style="min-height: 100vh; background: url('{% static "img/hostel4.jpg" %}') center/cover no-repeat;">
+<section id="about" class="position-relative d-flex align-items-center text-white" style="min-height: 100vh;">
   
+  <!-- Background Image -->
+  <img src="{% static 'img/hostel4.jpg' %}" alt="About Background" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+
   <!-- Overlay -->
-  <div class="position-absolute top-0 start-0 w-100 h-100" 
-       style="background: rgba(0, 0, 0, 0.6);"></div>
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6);"></div>
 
   <!-- Content -->
   <div class="container position-relative py-5">
@@ -69,7 +70,7 @@
 <!-- WHY IT WAS CREATED (text-only version) -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="card border-0 shadow-sm rounded-4 p-5" style="background-color: #f1f5ff;">
+  <div class="card border-0 shadow-sm rounded-4 p-5 panel-bg">
       <div class="d-flex align-items-center mb-4">
         <div class="rounded-circle bg-primary d-flex justify-content-center align-items-center me-3" 
              style="width:50px; height:50px;">
@@ -90,7 +91,7 @@
 </section>
 
 <!-- MISSION & VISION -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light panel-bg">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <!-- Mission -->

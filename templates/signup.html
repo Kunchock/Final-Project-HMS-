@@ -115,7 +115,7 @@ function togglePassword() {
 
 /* Gradient header */
 .card-header {
-    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    background: linear-gradient(135deg, var(--primary-orange), var(--soft-gold));
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -131,19 +131,19 @@ input.form-control {
     border-radius: 10px;
 }
 input.form-control:focus {
-    border-color: #2193b0;
+    border-color: var(--primary-orange);
     box-shadow: 0 0 8px rgba(33, 147, 176, 0.4);
 }
 
 /* Buttons with gradient + hover effect */
 .btn-primary {
-    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    background: linear-gradient(135deg, var(--primary-orange), var(--soft-gold));
     border: none;
     font-weight: 600;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 .btn-primary:hover {
-    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    background: linear-gradient(135deg, var(--soft-gold), var(--primary-orange));
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }

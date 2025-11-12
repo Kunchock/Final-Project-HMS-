@@ -65,3 +65,37 @@
 .jazzmin-login #content {
     padding-top: 20px;
 }
+
+/* Admin palette adjustments to match site */
+.admin-branding {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #825E34; /* warm brown */
+    color: white;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.admin-branding h1 { margin: 0; font-size: 24px; color: #fff; }
+.admin-branding p { margin: 0; font-size: 12px; color: rgba(255,255,255,0.85); }
+
+.admin-nav-global {
+    background: #FDFBD4; /* cream */
+    padding: 10px 20px;
+    border-bottom: 1px solid #E0C99B; /* gold border */
+}
+.admin-nav-global .stat-item span, .admin-nav-global .stat-item a { color: #3B2F2F; }
+.admin-nav-global .stat-item a:hover { color: #D47E30; }
+
+#footer {
+    background: #825E34;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.results th { background: #825E34; color: white; }
+.results tr:nth-child(even) { background-color: #FDFBD4; }
+

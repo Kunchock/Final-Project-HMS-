@@ -8,48 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .login-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            padding: 30px;
-            max-width: 400px;
-            width: 100%;
-        }
-        .login-header { text-align: center; margin-bottom: 25px; }
-        .btn-login {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 10px;
-            width: 100%;
-            padding: 12px;
-            color: #fff;
-            font-weight: 600;
-        }
-        .btn-login:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102,126,234,0.4); }
-        .password-toggle {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #666;
-            cursor: pointer;
-        }
-        .login-footer { text-align: center; margin-top: 20px; }
-    </style>
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
 </head>
-<body>
+<body class="login-center">
     <div class="login-card">
         <div class="login-header">
             <h2><i class="fas fa-user-shield me-2"></i>Login</h2>
