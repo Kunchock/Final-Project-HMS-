@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Receipt - {{ payment.id }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .receipt-container {
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info div {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .btn-print {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-print:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <h1>Hostel Management System</h1>
+        <h2>Payment Receipt</h2>
+
+        <div class="info">
+            <div><strong>Receipt ID:</strong> {{ payment.id }}</div>
+            <div><strong>Student ID:</strong> {{ payment.student_id }}</div>
+            <div><strong>Email:</strong> {{ payment.email }}</div>
+            <div><strong>Payment Method:</strong> {{ payment.payment_method }}</div>
+            <div><strong>Payment Status:</strong> {{ payment.payment_status|capfirst }}</div>
+            <div><strong>Date:</strong> {{ payment.payment_date|date:"d M Y, H:i" }}</div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>{{ payment.notes|default:"Room/Service Payment" }}</td>
+                <td>{{ payment.amount }}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th>{{ payment.amount }}</th>
+            </tr>
+        </table>
+
+        <a href="javascript:window.print()" class="btn-print">Print Receipt</a>
+
+        <div class="footer">
+            Thank you for your payment!<br>
+            Hostel Management System
+        </div>
+    </div>
+</body>
+</html>

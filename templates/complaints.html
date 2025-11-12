@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %} Lodge a Complaint {% endblock title %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bold">Lodge a Complaint</h1>
+                <p class="lead text-muted">We're here to help resolve your concerns quickly</p>
+            </div>
+
+            <!-- Django Messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <form method="post" class="needs-validation" novalidate action="{% url 'complaints' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="studentName" class="form-label">Student Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentName" name="name" required
+                                    value="{% if request.user.is_authenticated %}{{ request.user.get_full_name }}{% endif %}">
+                                <div class="invalid-feedback">
+                                    Please provide your full name.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="studentId" class="form-label">Student ID <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentId" name="student_id" required
+                                    value="{% if request.user.is_authenticated %}{{ request.user.profile.student_id }}{% endif %}">
+                                <div class="invalid-feedback">
+                                    Please provide your student ID.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                value="{% if request.user.is_authenticated %}{{ request.user.email }}{% endif %}">
+                            <div class="invalid-feedback">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="complaintType" class="form-label">Complaint Type <span class="text-danger">*</span></label>
+                            <select class="form-select" id="complaintType" name="complaint_type" required>
+                                <option value="">Select Complaint Type</option>
+                                <option value="cleanliness">Cleanliness</option>
+                                <option value="noise">Noise</option>
+                                <option value="repair">Repair</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a complaint type.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="priority" class="form-label">Priority</label>
+                            <select class="form-select" id="priority" name="priority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="description" name="description" rows="5" required placeholder="Please describe your complaint in detail..."></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a detailed description of your complaint.
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Complaint
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <h6><i class="fas fa-info-circle me-2"></i>What happens next?</h6>
+                <ul class="mb-0">
+                    <li>Your complaint will be reviewed within 2 hours</li>
+                    <li>You'll receive email updates on the progress</li>
+                    <li>Most issues are resolved within 24-48 hours</li>
+                    <li>For urgent matters, call our helpline: +1 (555) 123-4567</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Bootstrap form validation
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+{% endblock %}
+    

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center" 
+     style="min-height: 100vh; 
+            background: linear-gradient(135deg, #ffccd9, #ffe0e6); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    <div class="text-center p-5 rounded-4 shadow-lg" 
+         style="background: #fff; max-width: 400px; width: 90%; border: none;">
+
+        <!-- Icon -->
+        <img src="{% static 'img/logout.jpg' %}" 
+             alt="Logout Icon" 
+             style="width: 80px; margin-bottom: 20px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+
+        <!-- Text -->
+        <h2 style="color: #333; margin-bottom: 10px;">You’ve been logged out</h2>
+        <p style="color: #555; margin-bottom: 30px;">Thank you for visiting HMS! You can log back in or return to the homepage.</p>
+
+        <!-- Buttons -->
+        <a href="{% url 'login' %}" 
+           class="btn btn-danger mb-2 w-100" 
+           style="padding: 10px 0; font-size: 1rem;">Login Again</a>
+        <a href="{% url 'Home' %}" 
+           class="btn btn-outline-danger w-100" 
+           style="padding: 10px 0; font-size: 1rem;">Home</a>
+    </div>
+</div>
+
+<style>
+    .shadow-lg {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    .btn:hover {
+        transform: scale(1.03);
+        transition: 0.2s;
+    }
+</style>
+{% endblock %}

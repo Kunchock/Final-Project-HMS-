@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %} Services {% endblock title %}
+{% block content %}
+
+<!-- Hero / Intro Section -->
+<section class="service-hero py-5 text-center text-light" 
+         style="background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+         url('/static/images/hostel1.jpg') center/cover no-repeat;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">Simplifying Hostel Life for Every Student</h1>
+    <p class="lead">We built HostelConnect to make living, learning, and managing your hostel stay stress-free and connected.</p>
+  </div>
+</section>
+
+<!-- Core Management Services -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h2 class="display-6 fw-bold mb-3">Core Management Features</h2>
+        <p class="lead text-muted">Digital tools to handle your hostel experience smoothly.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <a href="{% url 'room_booking' %}" class="text-decoration-none">
+          <div class="card feature-card border-0 shadow-sm h-100">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-bed fa-2x text-primary"></i>
+              </div>
+              <h5 class="card-title fw-bold">Room Booking <span class="badge bg-success ms-2">Most Used</span></h5>
+              <p class="card-text text-muted">Find and reserve your ideal room in seconds — with live availability and instant confirmation.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="{% url 'complaints' %}" class="text-decoration-none">
+          <div class="card feature-card border-0 shadow-sm h-100">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-exclamation-triangle fa-2x text-warning"></i>
+              </div>
+              <h5 class="card-title fw-bold">Complaints</h5>
+              <p class="card-text text-muted">Submit and track issues effortlessly — we ensure faster resolutions and better accountability.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="{% url 'payment_management' %}" class="text-decoration-none">
+          <div class="card feature-card border-0 shadow-sm h-100">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-credit-card fa-2x text-info"></i>
+              </div>
+              <h5 class="card-title fw-bold">Payment Management</h5>
+              <p class="card-text text-muted">Secure online payments with instant receipts — making transactions safe, quick, and transparent.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hostel Facilities Section -->
+<section class="py-5 bg-light">
+  <div class="container services-section">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold mb-3">Comfort & Facilities</h2>
+      <p class="lead text-muted">Because your comfort, security, and peace of mind matter to us.</p>
+    </div>
+
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-wifi"></i></div>
+          <h5>High-Speed Wi-Fi</h5>
+          <p class="text-muted">Enjoy unlimited 24×7 internet access in rooms and common areas — stay connected always.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-bed"></i></div>
+          <h5>Comfortable Rooms</h5>
+          <p class="text-muted">Clean, ventilated rooms with personal study space — designed for focus and rest.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-utensils"></i></div>
+          <h5>Healthy Meals</h5>
+          <p class="text-muted">Nutritious meals every day — with non-veg options twice a week. <span class="badge bg-warning text-dark">Student Favorite</span></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-shower"></i></div>
+          <h5>24×7 Water Supply</h5>
+          <p class="text-muted">Continuous access to clean water and hygienic washrooms — no compromises on comfort.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+          <h5>Laundry Access</h5>
+          <p class="text-muted">Free washing machine access for every student — making daily chores effortless.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <div class="service-icon"><i class="fas fa-bolt"></i></div>
+          <h5>Inverter Backup</h5>
+          <p class="text-muted">Stay powered through every moment — inverter backup for uninterrupted living.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing CTA -->
+    <div class="text-center mt-5">
+      <h4 class="fw-bold mb-3">Ready to Experience Better Hostel Life?</h4>
+      <p class="text-muted mb-4">Join hundreds of students enjoying a stress-free, well-managed hostel experience.</p>
+      <a href="{% url 'Contact' %}" class="btn btn-primary px-4 py-2 rounded-pill">Contact Us Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styles -->
+<style>
+body {
+  background-color: #f9f5f0;
+}
+
+.feature-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card {
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #198754;
+}
+
+.service-hero {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+</style>
+
+{% endblock content %}

@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block title %}Help{% endblock title %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="help-hero text-center text-white py-5 position-relative">
+  <div class="container position-relative z-1">
+    <h1 class="display-4 fw-bold mb-3">How can we help you?</h1>
+    <p class="lead mb-0">Find quick answers, step-by-step guides, and support options.</p>
+  </div>
+</section>
+
+<!-- Help Section -->
+<section id="help" class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-6 fw-bold mb-3">Frequently Asked Questions</h2>
+        <p class="text-muted">Browse through the most common queries from our users</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="accordion" id="helpAccordion">
+
+          <!-- Room Booking -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bookingOne">
+                <i class="bi bi-calendar-check me-2 text-primary"></i> How do I book a room?
+              </button>
+            </h2>
+            <div id="bookingOne" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Click the "Book a Room" button and follow the registration process. You'll see available rooms and can select your preferred accommodation.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingTwo">
+                <i class="bi bi-arrow-repeat me-2 text-primary"></i> How do I cancel or change my booking?
+              </button>
+            </h2>
+            <div id="bookingTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                You can cancel or change bookings from your dashboard. Refund policies and deadlines are listed in the cancellation section.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingThree">
+                <i class="bi bi-people-fill me-2 text-primary"></i> Can I book multiple rooms at once?
+              </button>
+            </h2>
+            <div id="bookingThree" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Yes, group bookings are allowed. Make sure to select the number of rooms required during booking.
+              </div>
+            </div>
+          </div>
+
+          <!-- Payments -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentOne">
+                <i class="bi bi-credit-card me-2 text-success"></i> What payment methods are accepted?
+              </button>
+            </h2>
+            <div id="paymentOne" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                We accept all major credit cards, debit cards, online banking, and digital wallet payments.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentTwo">
+                <i class="bi bi-receipt me-2 text-success"></i> Can I get a receipt after payment?
+              </button>
+            </h2>
+            <div id="paymentTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Receipts are generated instantly and can be downloaded from your dashboard or sent to your email.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentThree">
+                <i class="bi bi-exclamation-triangle me-2 text-success"></i> What should I do if payment fails?
+              </button>
+            </h2>
+            <div id="paymentThree" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Retry the payment using a different method or contact support if the problem persists.
+              </div>
+            </div>
+          </div>
+
+          <!-- Complaints -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#complaintOne">
+                <i class="bi bi-chat-left-dots me-2 text-danger"></i> How can I submit a complaint?
+              </button>
+            </h2>
+            <div id="complaintOne" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Submit complaints through your dashboard. All complaints are tracked and resolved within 24-48 hours.
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#safetyOne">
+                <i class="bi bi-shield-check me-2 text-warning"></i> Who should I contact in case of an emergency?
+              </button>
+            </h2>
+            <div id="safetyOne" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Contact the hostel staff immediately. Emergency numbers are listed on your dashboard and notice boards.
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#techTwo">
+                <i class="bi bi-laptop me-2 text-info"></i> Which browsers or devices are supported?
+              </button>
+            </h2>
+            <div id="techTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                HMS supports all modern browsers (Chrome, Edge, Firefox, Safari) and is mobile responsive for tablets and smartphones.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contact Support CTA -->
+        <div class="text-center mt-5">
+          <p class="lead mb-3">Didn’t find what you were looking for?</p>
+          <a href="{% url 'Contact' %}" class="btn btn-primary btn-lg rounded-pill px-4">
+            <i class="bi bi-envelope"></i> Contact Support
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styles -->
+<style>
+.help-hero {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  background-image: url('/static/images/help-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.help-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.accordion-item {
+  border-radius: 12px !important;
+  margin-bottom: 1rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.accordion-button {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  color: #333;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  color: #007bff;
+  box-shadow: none;
+}
+.accordion-body {
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+{% endblock content %}
+    

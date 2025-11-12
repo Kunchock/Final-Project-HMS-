@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-5">
+                    <!-- Profile Header -->
+                    <div class="d-flex flex-column flex-md-row align-items-center mb-4">
+                        <div class="me-md-4 mb-3 mb-md-0">
+                            <!-- Profile Picture Placeholder -->
+                            <img src="{% static 'img/profile-pic.jpg' %}" alt="Profile Picture" class="rounded-circle border" width="120" height="120">
+                        </div>
+                        <div class="text-center text-md-start">
+                            <h3 class="card-title mb-1">{{ user.get_full_name|default:user.username }}</h3>
+                            <p class="text-muted mb-0">{{ user.email }}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Profile Info -->
+                    <div class="row text-center text-md-start">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-muted">Username</h6>
+                            <p class="fw-bold">{{ user.username }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-muted">First Name</h6>
+                            <p class="fw-bold">{{ user.first_name|default:"-" }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-muted">Last Name</h6>
+                            <p class="fw-bold">{{ user.last_name|default:"-" }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-muted">Email</h6>
+                            <p class="fw-bold">{{ user.email }}</p>
+                        </div>
+                        <!-- Added Student ID -->
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-muted">Student ID</h6>
+                            <p class="fw-bold">{{ user.profile.student_id }}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Actions -->
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a href="{% url 'logout' %}" class="btn btn-danger rounded-pill px-4">Logout</a>
+                        <a href="{% url 'edit_profile' %}" class="btn btn-warning rounded-pill px-4">Edit Profile</a>
+                        <a href="{% url 'profile' %}" class="btn btn-primary rounded-pill px-4">Profile</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

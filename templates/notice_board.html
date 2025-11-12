@@ -1,0 +1,52 @@
+{% if user.is_authenticated %}
+<div id="notice-board" class="position-fixed top-0 end-0 m-3 p-2 shadow-lg rounded-4" 
+     style="width: 300px; max-height: 80vh; overflow-y: auto; background-color: rgba(255,255,255,0.85); z-index: 1050;">
+     
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0 text-primary fw-bold">Notice Board</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="document.getElementById('notice-board').style.display='none';"></button>
+    </div>
+
+    <div class="notice-list">
+        {% for notice in latest_notices %}
+        <div class="alert alert-light alert-dismissible fade show" role="alert">
+            <strong>{{ notice.title }}</strong>
+            <p class="mb-1">{{ notice.message|truncatewords:20 }}</p>
+            <small class="text-muted">{{ notice.date_posted|date:"M d, Y" }}</small>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% empty %}
+        <div class="alert alert-secondary text-center" role="alert">
+            No notices available at the moment.
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+#notice-board {
+    backdrop-filter: blur(10px);
+}
+#notice-board .alert {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: none;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    transition: transform 0.3s ease;
+}
+#notice-board .alert:hover {
+    transform: translateX(-5px);
+}
+.notice-list::-webkit-scrollbar {
+    width: 6px;
+}
+.notice-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.notice-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+</style>
+{% endif %}
