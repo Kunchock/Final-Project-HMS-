@@ -72,6 +72,13 @@ a:visited{ color: var(--cta-visited); }
 .card-title, .hms-card-title{ color: var(--card-title); }
 .hms-card-subtext{ color: var(--text-dark); }
 
+/* Feature card specific overrides (reset Bootstrap defaults) */
+.feature-card.card {
+  padding: 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 /* Login card specific */
 .login-card{
   background: rgba(255,255,255,0.98);
@@ -130,9 +137,22 @@ a:visited{ color: var(--cta-visited); }
 .feature-card {
   transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease, color .25s ease;
   height: 100%;
+  min-height: 320px;
+  width: 100%;
   background-color: #fff; /* keep content contrast */
   border: 2px solid transparent;
   color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+}
+/* Ensure card body stretches and centers content uniformly */
+.feature-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
 }
 /* On hover we *invert* the card colors: dark background and light text/icons */
 .feature-card:hover {
@@ -333,16 +353,30 @@ footer a:hover { color: white; }
   z-index: 2;
 }
 
-/* Feature highlight cards inside About: subtle border to separate each section */
+/* Feature highlight cards inside About: high-contrast visible text with palette-based backgrounds */
 .about-feature-card {
-  background-color: rgba(255,255,255,0.06); /* keep translucent look */
-  border: 1px solid rgba(181,128,90,0.12); /* warm border matching palette */
-  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  background: linear-gradient(135deg, rgba(212, 126, 48, 0.15), rgba(141, 90, 43, 0.12)); /* warm orange-to-brown tint */
+  border: 2px solid rgba(212, 126, 48, 0.25); /* warm orange border from palette */
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(2px);
+}
+/* Make text inside about-feature-card more visible */
+.about-feature-card h5 {
+  color: var(--dark-brown) !important;
+  font-weight: 700 !important;
+}
+.about-feature-card p {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+}
+.about-feature-card i {
+  color: var(--primary-orange) !important;
 }
 .about-feature-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border-color: rgba(181,128,90,0.22);
+  box-shadow: 0 12px 30px rgba(212, 126, 48, 0.15);
+  border-color: rgba(212, 126, 48, 0.4);
+  background: linear-gradient(135deg, rgba(212, 126, 48, 0.25), rgba(141, 90, 43, 0.22));
 }
 
 
